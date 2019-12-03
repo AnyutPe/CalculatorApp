@@ -12,6 +12,7 @@ import kotlin.math.sqrt
 
 class MainActivity : AppCompatActivity() {
 
+    //TODO please refactor this code
     var lastDigit: String = ""
     var prevOperator: String = ""
     var currentOperator: String = ""
