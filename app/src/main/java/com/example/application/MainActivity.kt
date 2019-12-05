@@ -45,6 +45,10 @@ class MainActivity : AppCompatActivity() {
         expression_rv.layoutManager = layoutManager
         expression_rv.adapter = adapter
 
+        //recyclerview buttons- arrows to left and to right
+
+
+
         //DIGITS
         btnOne.setOnClickListener { appendOnExpression("1", true, adapter) }
         btnTwo.setOnClickListener { appendOnExpression("2", true, adapter) }
@@ -61,6 +65,7 @@ class MainActivity : AppCompatActivity() {
             if (lastDigit.isEmpty()) {
                 lastDigit = "0."
             }
+
             appendOnExpression(".", true, adapter)
         }
 
@@ -371,6 +376,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
+
 
 
 

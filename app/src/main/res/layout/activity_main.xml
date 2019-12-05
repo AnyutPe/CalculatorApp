@@ -15,7 +15,7 @@
         android:layout_margin="5dp">
 
         <Button
-            android:id="@+id/arrowToLeft"
+            android:id="@+id/btnArrowToLeft"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_chevron_left_white_24dp"
@@ -25,32 +25,19 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-<!--        <TextView-->
-<!--            android:id="@+id/expression"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="30dp"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            android:gravity="end"-->
-<!--            android:textAlignment="gravity"-->
-<!--            android:textColor="@android:color/white"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/arrowToRight"-->
-<!--            app:layout_constraintStart_toEndOf="@+id/arrowToLeft"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/expression_rv"
             android:layout_width="0dp"
             android:layout_height="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/arrowToRight"
-            app:layout_constraintStart_toEndOf="@+id/arrowToLeft"
+            app:layout_constraintEnd_toStartOf="@+id/btnArrowToRight"
+            app:layout_constraintStart_toEndOf="@+id/btnArrowToLeft"
             app:layout_constraintTop_toTopOf="parent" />
 
 
         <Button
 
-            android:id="@+id/arrowToRight"
+            android:id="@+id/btnArrowToRight"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_chevron_right_white_24dp"
