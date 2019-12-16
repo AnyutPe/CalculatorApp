@@ -1,9 +1,11 @@
-package com.example.application
+package com.example.application.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
+import com.example.application.ExpressionViewHolder
+import com.example.application.R
 
 public class ExpressionAdapter(var items: MutableList<String>, val context: Context) :
     Adapter<ExpressionViewHolder>() {

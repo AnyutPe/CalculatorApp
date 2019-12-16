@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_title_calculator"
+        android:title="Calculator ">
+
+        <menu>
+
+            <item
+                android:id="@+id/nav_standard_calc"
+                android:icon="@drawable/standard"
+                android:title="Standard" />
+
+            <item
+                android:id="@+id/nav_scientific_calc"
+                android:icon="@drawable/sientific"
+                android:title="Scientific" />
+
+            <item
+                android:id="@+id/nav_programmer_calc"
+                android:icon="@drawable/programmer"
+                android:title="Programmer" />
+
+            <item
+                android:id="@+id/nav_date_calc"
+                android:icon="@drawable/date_calculation2"
+                android:title="Date Calculation" />
+
+
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/nav_title_converter"
+        android:title="Converter ">
+
+
+        <menu>
+            <item
+                android:id="@+id/nav_currency_convert"
+                android:icon="@drawable/currency2"
+                android:title="Currency" />
+
+            <item
+                android:id="@+id/nav_data_convert"
+                android:icon="@drawable/data"
+                android:title="Data" />
+
+            <item
+                android:id="@+id/nav_length_convert"
+                android:icon="@drawable/length"
+                android:title="Length" />
+
+            <item
+                android:id="@+id/nav_power_convert"
+                android:icon="@drawable/power"
+                android:title="Power" />
+
+            <item
+                android:id="@+id/nav_speed_convert"
+                android:icon="@drawable/speed"
+                android:title="Speed" />
+
+            <item
+                android:id="@+id/nav_temperature_convert"
+                android:icon="@drawable/temperature"
+                android:title="Temperature" />
+
+        </menu>
+    </item>
+</menu>
+
+
+
+
