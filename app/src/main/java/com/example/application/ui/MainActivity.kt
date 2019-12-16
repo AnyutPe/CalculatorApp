@@ -8,7 +8,12 @@ import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.FragmentTransaction
 import com.example.application.R
+import com.example.application.fragments.calcFragments.DateCalcFragment
+import com.example.application.fragments.calcFragments.ProgrammerCalcFragment
+import com.example.application.fragments.calcFragments.ScientificCalcFragment
+import com.example.application.fragments.calcFragments.StandardCalcFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import androidx.appcompat.app.ActionBarDrawerToggle as ActionBarDrawerToggle1
@@ -18,116 +23,43 @@ import com.google.android.material.navigation.NavigationView
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
 
-//    lateinit var standardCalcFragment: StandardCalcFragment
-//    lateinit var scientificCalcFragment: ScientificCalcFragment
-//    lateinit var programmerCalcFragment: ProgrammerCalcFragment
-//    lateinit var dateCalcFragment: DateCalcFragment
+    lateinit var standardCalcFragment: StandardCalcFragment
+    lateinit var scientificCalcFragment: ScientificCalcFragment
+    lateinit var programmerCalcFragment: ProgrammerCalcFragment
+    lateinit var dateCalcFragment: DateCalcFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setSupportActionBar(toolbar)
-
-        val drawerToggle = ActionBarDrawerToggle1(
-            this,
-            drawer_layout,
-            toolbar,
-            0,
-            0
-        )
-
-        drawer_layout.addDrawerListener(drawerToggle)
-        drawerToggle.syncState()
-        nav_view.setNavigationItemSelectedListener(this)
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.nav_standard_calc -> {
-                Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
-            }
-            R.id.nav_scientific_calc -> {
-                Toast.makeText(this, "Messages clicked", Toast.LENGTH_SHORT).show()
-            }
-            R.id.nav_date_calc -> {
-                Toast.makeText(this, "Friends clicked", Toast.LENGTH_SHORT).show()
-            }
-            R.id.nav_programmer_calc -> {
-                Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
-            }
-
-        }
-        drawer_layout.closeDrawer(GravityCompat.START)
-        return true
-    }
-
-}
-
-
-
-
 //        setSupportActionBar(toolbar)
-//        val actionBar = supportActionBar
-//        actionBar?.title = "Navigation Drawer"
 //
-//        val drawerToggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle(
+//        val drawerToggle = ActionBarDrawerToggle1(
 //            this,
 //            drawer_layout,
 //            toolbar,
-//            (R.string.open),
-//            (R.string.close)
-//        ) {
+//            0,
+//            0
+//        )
 //
-//
-//        }
-//        drawerToggle.isDrawerIndicatorEnabled = true
 //        drawer_layout.addDrawerListener(drawerToggle)
 //        drawerToggle.syncState()
-//
 //        nav_view.setNavigationItemSelectedListener(this)
-//
-//        standardCalcFragment = StandardCalcFragment()
-//        supportFragmentManager
-//            .beginTransaction()
-//            .replace(R.id.fragments_linear_layout, standardCalcFragment)
-//            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-//            .commit()
 //    }
 //
 //    override fun onNavigationItemSelected(item: MenuItem): Boolean {
 //        when (item.itemId) {
 //            R.id.nav_standard_calc -> {
-//                standardCalcFragment = StandardCalcFragment()
-//                supportFragmentManager
-//                    .beginTransaction()
-//                    .replace(R.id.fragments_linear_layout, standardCalcFragment)
-//                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-//                    .commit()
+//                Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
 //            }
 //            R.id.nav_scientific_calc -> {
-//                scientificCalcFragment = ScientificCalcFragment()
-//                supportFragmentManager
-//                    .beginTransaction()
-//                    .replace(R.id.fragments_linear_layout, scientificCalcFragment)
-//                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-//                    .commit()
-//            }
-//            R.id.nav_programmer_calc -> {
-//                programmerCalcFragment = ProgrammerCalcFragment()
-//                supportFragmentManager
-//                    .beginTransaction()
-//                    .replace(R.id.fragments_linear_layout, programmerCalcFragment)
-//                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-//                    .commit()
+//                Toast.makeText(this, "Messages clicked", Toast.LENGTH_SHORT).show()
 //            }
 //            R.id.nav_date_calc -> {
-//                dateCalcFragment = DateCalcFragment()
-//                supportFragmentManager
-//                    .beginTransaction()
-//                    .replace(R.id.fragments_linear_layout, dateCalcFragment)
-//                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-//                    .commit()
+//                Toast.makeText(this, "Friends clicked", Toast.LENGTH_SHORT).show()
+//            }
+//            R.id.nav_programmer_calc -> {
+//                Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
 //            }
 //
 //        }
@@ -135,15 +67,88 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 //        return true
 //    }
 
-//    override fun onBackPressed() {
-//        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-//            drawer_layout.closeDrawer(GravityCompat.START)
-//        } else {
-//            super.onBackPressed()
-//        }
-//    }
-
 //}
+
+
+
+
+        setSupportActionBar(toolbar)
+        val actionBar = supportActionBar
+        actionBar?.title = "Navigation Drawer"
+
+        val drawerToggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle(
+            this,
+            drawer_layout,
+            toolbar,
+            (R.string.open),
+            (R.string.close)
+        ) {
+
+
+        }
+        drawerToggle.isDrawerIndicatorEnabled = true
+        drawer_layout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
+
+        nav_view.setNavigationItemSelectedListener(this)
+
+        standardCalcFragment = StandardCalcFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, standardCalcFragment)
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+            .commit()
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_standard_calc -> {
+                standardCalcFragment = StandardCalcFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, standardCalcFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
+            R.id.nav_scientific_calc -> {
+                scientificCalcFragment = ScientificCalcFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, scientificCalcFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
+            R.id.nav_programmer_calc -> {
+                programmerCalcFragment = ProgrammerCalcFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, programmerCalcFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
+            R.id.nav_date_calc -> {
+                dateCalcFragment = DateCalcFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, dateCalcFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
+
+        }
+        drawer_layout.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+    override fun onBackPressed() {
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+            drawer_layout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+
+}
 
 
 
