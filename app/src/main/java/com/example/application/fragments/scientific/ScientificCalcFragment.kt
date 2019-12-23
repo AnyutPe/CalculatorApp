@@ -1,4 +1,4 @@
-package com.example.application.fragments.calcFragments
+package com.example.application.fragments.scientific
 
 
 import android.os.Bundle
@@ -12,14 +12,14 @@ import com.example.application.R
 /**
  * A simple [Fragment] subclass.
  */
-class ProgrammerCalcFragment : Fragment() {
+class ScientificCalcFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_programmer_calc, container, false)
+        return inflater.inflate(R.layout.fragment_scientific_calc, container, false)
     }
 
 

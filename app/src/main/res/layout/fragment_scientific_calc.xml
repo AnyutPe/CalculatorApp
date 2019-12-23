@@ -3,17 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".fragments.calcFragments.ScientificCalcFragment"
     android:layout_gravity="center"
-    >
+    android:orientation="vertical"
+    tools:context=".fragments.scientific.ScientificCalcFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Scientific Calculator" />
+        android:gravity="center"
+        android:text="Scientific Calculator"
+        android:textSize="50dp" />
 
 </LinearLayout>

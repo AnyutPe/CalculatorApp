@@ -3,7 +3,6 @@
     <string name="open">open</string>
     <string name="close">close</string>
 
-
-    <string name="Memory">M<sub>⇩</sub></string>
+    <string name="Memory">M⇩</string>
 
 </resources>

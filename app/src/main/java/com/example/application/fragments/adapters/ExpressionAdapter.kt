@@ -1,10 +1,9 @@
-package com.example.application.adapter
+package com.example.application.fragments.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
-import com.example.application.ExpressionViewHolder
 import com.example.application.R
 
 public class ExpressionAdapter(var items: MutableList<String>, val context: Context) :
@@ -53,6 +52,10 @@ public class ExpressionAdapter(var items: MutableList<String>, val context: Cont
         items.removeAt(0)
         items.add(0,lastString)
         notifyDataSetChanged()
+
+
+
+
     }
 
 

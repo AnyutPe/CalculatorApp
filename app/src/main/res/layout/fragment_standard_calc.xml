@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/black"
     android:orientation="vertical"
-    tools:context=".fragments.calcFragments.StandardCalcFragment">
+    tools:context=".fragments.standard.StandardCalcFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -71,6 +71,37 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.6">
+
+
+            <Button
+                android:id="@+id/btnMC_ClearAllMemory"
+                style="@style/ActionBtnStyle"
+                android:text="MC" />
+
+            <Button
+                android:id="@+id/btnMR_MemoryRecall"
+                style="@style/ActionBtnStyle"
+                android:text="MR" />
+
+            <Button
+                android:id="@+id/btnMplus_MemoryAdd"
+                style="@style/ActionBtnStyle"
+                android:text="M+" />
+
+            <Button
+                android:id="@+id/btnMminus_MemorySubtract"
+                style="@style/ActionBtnStyle"
+                android:text="M-" />
+
+            <Button
+                android:id="@+id/btnMS_MemoryStore"
+                style="@style/ActionBtnStyle"
+                android:text="MS" />
+
+            <Button
+                android:id="@+id/btnM_Memory"
+                style="@style/ActionBtnStyle"
+                android:text="@string/Memory" />
 
         </LinearLayout>
 
