@@ -18,7 +18,6 @@ import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-
     private lateinit var standardCalcFragment: StandardCalcFragment
     private lateinit var scientificCalcFragment: ScientificCalcFragment
     private lateinit var programmerCalcFragment: ProgrammerCalcFragment
@@ -26,38 +25,33 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        //Initialize xml
+        /**
+         * Initialize xml layout
+         */
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        /**
+         * Toolbar set up
+         */
+        setupActionBarWithToggle()
 
-        //Toolbar set up
-        setSupportActionBar(toolbar)
-        val actionBar = supportActionBar
-        actionBar?.title = "Navigation Drawer"
-        val drawerToggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle(
-            this,
-            drawer_layout,
-            toolbar,
-            (R.string.open),
-            (R.string.close)
-        ) {
-
-
-        }
-        drawerToggle.isDrawerIndicatorEnabled = true
-        drawer_layout.addDrawerListener(drawerToggle)
-        drawerToggle.syncState()
-
+        /**
+         * Set menu item listener
+         */
         nav_view.setNavigationItemSelectedListener(this)
 
-        //initial fragment
+        /**
+         * Initializing fragment container
+         */
         standardCalcFragment = StandardCalcFragment()
         standardCalcFragment.replaceFragment(this, R.id.fragment_container)
 
     }
 
-    //Menu Item click
+    /**
+     * Menu Item click handler
+     */
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_standard_calc -> {
@@ -89,6 +83,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         } else {
             super.onBackPressed()
         }
+    }
+
+    private fun setupActionBarWithToggle() {
+        setSupportActionBar(toolbar)
+        val actionBar = supportActionBar
+        actionBar?.title = "Navigation Drawer"
+        val drawerToggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle(
+            this,
+            drawer_layout,
+            toolbar,
+            (R.string.open),
+            (R.string.close)
+        ) {
+
+
+        }
+
+        drawerToggle.isDrawerIndicatorEnabled = true
+        drawer_layout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
     }
 
 }
