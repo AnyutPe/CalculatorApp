@@ -22,5 +22,4 @@ class DateCalcFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_date_calc, container, false)
     }
 
-
 }
